@@ -1,6 +1,6 @@
-import mongoose, { mongo } from "mongoose";
+import mongoose from "mongoose";
 
-const compnaySchema = new mongoose.Schema(
+const companySchema = new mongoose.Schema(
 	{
 		name: {
 			type: String,
@@ -17,14 +17,12 @@ const compnaySchema = new mongoose.Schema(
 		},
 		logo: {
 			type: String,
-			required: true,
 		},
 		userId: {
 			type: mongoose.Schema.Types.ObjectId,
 			ref: "User",
-			required: true,
 		},
 	},
 	{ timestamps: true }
 );
-export const Company = mongoose.model("Company", compnaySchema);
+export const Company = mongoose.model("Company", companySchema);
