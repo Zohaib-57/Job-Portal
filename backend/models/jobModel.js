@@ -1,4 +1,4 @@
-import mongoose, { Model } from "mongoose";
+import mongoose from "mongoose";
 
 const jobSchema = new mongoose.Schema(
 	{
@@ -18,6 +18,10 @@ const jobSchema = new mongoose.Schema(
 		],
 		salary: {
 			type: String,
+			required: true,
+		},
+		expericenLevel: {
+			type: Number,
 			required: true,
 		},
 		location: {
@@ -50,5 +54,6 @@ const jobSchema = new mongoose.Schema(
 	},
 	{ timestamps: true }
 );
-export const Job = mongoose.model("Job", jobSchema);
+const Job = mongoose.model("Job", jobSchema);
+export default Job;
 // This model defines the structure of the job document in MongoDB.
